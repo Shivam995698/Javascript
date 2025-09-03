@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Shivam Verma </h1>
+  <button id="nh">Start</button>
+  <button id="stop">Stop</button>
+</body>
+<script>
+let ref2;
+function change()
+{
+  document.querySelector('h1').innerHTML = `placement lag gaye`;
+  console.log('hi');
+}
+document.querySelector('#nh') .addEventListener('click',function ()
+{
+  ref2= setInterval(change,100);
+  
+})
+// const ref2 = setTimeout(ref,100);
+document.querySelector('#stop').addEventListener('click',function()
+{
+   clearInterval(ref2);
+}) 
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite color change</title>
+</head>
+<body>
+  <h1>hi welcome to color chaanger world</h1>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+</body>
+<script>
+  
+  let hexdecimal = '123456789ABCDEFG';
+ function changeMe()
+  {
+    let temp = '#';
+      for(let i =0;i<6;i++)
+  {
+  temp+=hexdecimal[Math.floor(Math.random()*16)];
+  
+  }
+  return temp;
+  }
+  let id23;
+  const startchanging = function()
+  {
+    id23 = setInterval(changed,1000);
+    function changed()
+    {
+      document.querySelector('body').style.backgroundColor = changeMe();
+    }
+  }
+  const stopchangingme = function()
+  {
+    clearInterval(id23);
+  }
+  document.querySelector("#start").addEventListener('click',startchanging);
+  document.querySelector("#stop").addEventListener('click',stopchangingme);
+</script>
+</html>
